@@ -1,0 +1,15 @@
+[Unit]
+Description=Game-Flask
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=game-flask
+Group=game-flask
+WorkingDirectory=/data/game-flask/game-flask
+ExecStart=/data/game-flask/venv/bin/python3.6 run.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
